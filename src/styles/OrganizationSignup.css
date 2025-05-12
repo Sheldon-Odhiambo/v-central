@@ -1,0 +1,62 @@
+/* Organization Signup Form Styles */
+.organization-signup-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .organization-signup-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #f1c40f; /* Yellow color for the heading */
+  }
+  
+  .organization-signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .organization-signup-form input[type="text"],
+  .organization-signup-form input[type="tel"],
+  .organization-signup-form input[type="email"],
+  .organization-signup-form textarea {
+    padding: 12px;
+    border: 1px solid #333; /* Black border */
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .organization-signup-form textarea {
+    resize: vertical;
+  }
+  
+  .organization-signup-form button {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #f1c40f; /* Yellow background for the button */
+    color: black; /* Black text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .organization-signup-form button:hover {
+    background-color: #e67e22; /* Darker yellow on hover */
+  }
+  
+  .organization-signup-form input[type="text"]:focus,
+  .organization-signup-form input[type="tel"]:focus,
+  .organization-signup-form input[type="email"]:focus,
+  .organization-signup-form textarea:focus {
+    border-color: #f1c40f; /* Yellow border on focus */
+    outline: none;
+  }
+
+  

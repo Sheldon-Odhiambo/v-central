@@ -1,0 +1,77 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../styles/SignIn.css';
+
+const SignInPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ email, password, rememberMe });
+    // Add login logic here
+  };
+
+  const handleSignUpRedirect = () => {
+    navigate('/signup');
+  };
+
+  return (
+    <div className="signin-page">
+      <div className="form-container">
+        <h2 className="vcentral-logo">V-Central</h2>
+
+        <h1>Sign In</h1>
+        <p>Access your account and manage your preferences</p>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Email or Phone"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <div className="options-row">
+            <label>
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+              />
+              Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" className="primary-btn">Login</button>
+        </form>
+
+        <div className="separator">or</div>
+
+        <button className="google-btn">Sign in with Google</button>
+
+        <p className="signup-text">
+          Don’t have an account?{' '}
+          <span className="signup-link" onClick={handleSignUpRedirect}>
+            Sign up
+          </span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default SignInPage;

@@ -1,0 +1,113 @@
+.about-page {
+  background-color: #ffffff;
+}
+
+/* Hero section */
+.about-hero {
+  background-image: url('../assets/about.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 120px 20px;
+  color: #FFD200;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 60px 20px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Section */
+.about-section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Image + text split */
+.about-split {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .about-split {
+    flex-direction: row;
+    align-items: center;
+  }
+  .about-text {
+    padding-left: 40px;
+  }
+}
+
+/* Values Grid */
+.bg-light {
+  background-color: #f9f9f9;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
