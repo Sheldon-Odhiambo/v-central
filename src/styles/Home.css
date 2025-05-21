@@ -10,6 +10,7 @@
   background-image: url('../assets/pexels-kindelmedia-7688336.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   position: relative;
   padding: 140px 20px;
   color: #FFD200;
@@ -110,3 +111,79 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #ffd500;
+  color: #000;
+  padding: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* Already existing input styling – reused for password field */
+.input-field {
+  padding: 14px;
+  font-size: 16px;
+  margin: 12px 0;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 6px;
+  border: 1px solid #FFD200;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Optional enhancement: Add focus style */
+.input-field:focus {
+  outline: none;
+  border-color: #ffa500;
+  box-shadow: 0 0 4px #FFD200;
+}
+
+.password-field-wrapper {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #FFD200;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.password-strength {
+  font-size: 14px;
+  margin-bottom: 15px;
+  max-width: 320px;
+  text-align: left;
+}
+
+.password-strength.weak {
+  color: red;
+}
+
+.password-strength.medium {
+  color: orange;
+}
+
+.password-strength.strong {
+  color: green;
+}
+

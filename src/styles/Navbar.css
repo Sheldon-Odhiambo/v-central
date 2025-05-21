@@ -1,20 +1,49 @@
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 2rem;
-  background-color: #050C1A; /* dark gradient-like background */
+  background-color: #050C1A;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   margin: 1rem auto;
   max-width: 90%;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+} */
+
+.navbar {
+  position: fixed; /* Keep it on top */
+  top: 0;
+  left: 1.5rem; /* Shift it slightly to the right */
+  width: calc(100% - 3rem); /* Adjust width to keep it centered inside window */
+  z-index: 999;
+  background-color: #050C1A; /* Make it transparent */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin: 1rem auto;
+  max-width: 90%;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  backdrop-filter: blur(8px); /* Optional: adds blur to background for readability */
+  transition: background-color 0.3s ease;
+}
+
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo-icon {
@@ -25,13 +54,14 @@
 .logo-text {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #8b5cf6; /* purple-like for branding */
+  color: #8b5cf6;
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
 }
 
 .navbar-links a {
@@ -58,6 +88,39 @@
 .donate-btn:hover {
   background-color: #ffd500;
   color: #000;
+}
+
+/* Dropdown Styles */
+.signup-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #050C1A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.dropdown-menu a {
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #1a1a2e;
+  color: #ffd500;
 }
 
 .menu-toggle {
@@ -88,13 +151,30 @@
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
   .navbar-links a,
   .donate-btn {
     margin: 0.5rem 1.5rem;
     text-align: left;
+  }
+
+  .signup-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .dropdown-menu a {
+    margin-left: 1.5rem;
+    padding: 0.3rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }

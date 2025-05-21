@@ -11,6 +11,7 @@ body {
   justify-content: center;
   padding: 20px;
   background-color: #ffffff;
+  margin-top: 100px;
 }
 
 .form-container {
@@ -66,6 +67,18 @@ form input::placeholder {
   margin-bottom: 20px;
   color: #ffffff;
 }
+
+.options-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.options-row input[type="checkbox"] {
+  cursor: pointer;
+}
+
+
 
 .options-row a {
   text-decoration: none;
@@ -133,9 +146,20 @@ form input::placeholder {
   color: #e6c200;
 }
 
+.user-type-select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
 @media (min-width: 768px) {
   .signin-page {
     flex-direction: row;
     gap: 80px;
+    margin-top: 80px;
   }
 }

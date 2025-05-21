@@ -6,13 +6,14 @@ const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [userType, setUserType] = useState('volunteer'); // NEW: user type state
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ email, password, rememberMe });
-    // Add login logic here
+    console.log({ email, password, rememberMe, userType }); // Log userType too
+    // Add login logic here (e.g., validate userType with backend)
   };
 
   const handleSignUpRedirect = () => {
@@ -28,6 +29,19 @@ const SignInPage = () => {
         <p>Access your account and manage your preferences</p>
 
         <form onSubmit={handleSubmit}>
+          {/* User Type Dropdown */}
+          <select
+            className="user-type-select"
+            value={userType}
+            onChange={(e) => setUserType(e.target.value)}
+            required
+          >
+            <option value="" disabled>Select user type</option>
+            <option value="admin">Admin</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="organization">Organization</option>
+          </select>
+
           <input
             type="email"
             placeholder="Email or Phone"

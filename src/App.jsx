@@ -8,6 +8,9 @@ import SignIn from "./components/SignIn";
 import Foooter from "./components/Foooter";
 import Footer from "./components/Footer";
 import About from "./components/About";
+import VolunteerDashboard from "./components/VolunteerDashboard";
+import OrganizationDashboard from "./components/OrganizationDashboard";
+
 
 
 
@@ -28,6 +31,10 @@ function App() {
       <Route path="/foooter" element={<Foooter/>}/>
       <Route path="/footer" element={<Footer/>}/>
       <Route path="/about" element={<About/>}/>
+      <Route path="/volunteerdashboard" element={<VolunteerDashboard/>}/>
+      <Route path="/organizationdashboard" element={<OrganizationDashboard/>}/>
+
+
 
     </Routes>
     

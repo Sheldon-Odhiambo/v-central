@@ -6,6 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleLogoClick = () => {
     navigate('/');
@@ -21,12 +22,23 @@ const Navbar = () => {
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
         <a href="/opportunities">Find Opportunities</a>
         <a href="/about">About</a>
-        <a href="/solutions">Business Solutions</a>
-        <a href="/recruit">Recruit Volunteers</a>
         <a href="/signin">Log In</a>
-        <a href="/signup">
-          <button className="donate-btn">Sign Up</button>
-        </a>
+
+        <div
+          className="signup-dropdown"
+          onMouseEnter={() => setDropdownOpen(true)}
+          onMouseLeave={() => setDropdownOpen(false)}
+        >
+          <button className="donate-btn">Sign Up ▾</button>
+          {dropdownOpen && (
+            <div className="dropdown-menu">
+              <a href="/signup/volunteer">As Volunteer</a>
+              <a href="/signup/organization">As Organization</a>
+            </div>
+          )}
+        </div>
+
+        <a href="/contact">Contact</a>
       </div>
 
       <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
