@@ -1,3 +1,4 @@
+/* Base Wrapper */
 .home-wrapper {
   display: flex;
   flex-direction: column;
@@ -43,93 +44,68 @@
   animation: fadeIn 1.5s ease-out;
 }
 
-/* Sign-up Section */
-.home-container {
-  background-color: #111;
-  color: #FFD200;
-  padding: 80px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.home-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #FFD200;
-  margin-bottom: 12px;
-}
-
-.home-subtitle {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 30px;
-  max-width: 600px;
-}
-
-.input-field {
-  padding: 14px;
-  font-size: 16px;
-  margin: 12px 0;
-  width: 100%;
-  max-width: 320px;
-  border-radius: 6px;
-  border: 1px solid #FFD200;
-  background-color: #fff;
-  color: #000;
-}
-
-.user-type-selection {
-  margin: 20px 0;
-  font-size: 18px;
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  color: #fff;
-}
-
-.signup-button {
-  padding: 12px 28px;
-  font-size: 18px;
-  background-color: #FFD200;
-  border: none;
-  color: #000;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.signup-button:hover {
-  background-color: #e6c200;
-  transform: scale(1.05);
-}
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-.read-more-btn {
-  display: inline-block;
-  background-color: #ffd500;
-  color: #000;
-  padding: 0.5rem 1.25rem;
-  margin-top: 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Sign-up Section */
+.home-container {
+  background-image: url('../assets/homebackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 100px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
 
-.read-more-btn:hover {
-  background-color: #ffffff;
-  color: #000;
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
 }
 
-/* Already existing input styling – reused for password field */
+.home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #FFD200;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-subtitle {
+  font-size: 1.3rem;
+  color: #eee;
+  max-width: 600px;
+  margin-bottom: 50px;
+}
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+
+/* Input Fields */
 .input-field {
   padding: 14px;
   font-size: 16px;
@@ -142,13 +118,13 @@
   color: #000;
 }
 
-/* Optional enhancement: Add focus style */
 .input-field:focus {
   outline: none;
   border-color: #ffa500;
   box-shadow: 0 0 4px #FFD200;
 }
 
+/* Password Field Enhancements */
 .password-field-wrapper {
   position: relative;
   max-width: 320px;
@@ -168,6 +144,7 @@
   font-size: 14px;
 }
 
+/* Password Strength Indicator */
 .password-strength {
   font-size: 14px;
   margin-bottom: 15px;
@@ -187,3 +164,89 @@
   color: green;
 }
 
+/* User Type Selector */
+.user-type-selection {
+  margin: 20px 0;
+  font-size: 18px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Button Styles */
+.signup-button,
+.read-more-btn {
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-button {
+  background-color: #FFD200;
+  color: #000;
+  margin-top: 15px;
+}
+
+.signup-button:hover {
+  background-color: #e6c200;
+  transform: scale(1.05);
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #ffd500;
+  color: #000;
+  padding: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.read-more-btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+/* ========== Diagram Section ========== */
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin: 80px 20px;
+  position: relative;
+}
+
+.diagram-row {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.node {
+  background-color: #FFD200;
+  color: #000;
+  padding: 18px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.node:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.center-node {
+  font-size: 1.3rem;
+  border: 3px solid #000;
+}
