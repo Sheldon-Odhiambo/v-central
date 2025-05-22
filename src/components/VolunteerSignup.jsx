@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../styles/VolunteerSignup.css'; // style file if needed
+import '../styles/VolunteerSignup.css';
 
 const VolunteerSignup = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -16,7 +17,11 @@ const VolunteerSignup = () => {
     availability: '',
     photo: null,
     email: '',
+    password: '',
+    confirmPassword: '',
   });
+
+  const [error, setError] = useState('');
 
   useEffect(() => {
     if (location.state?.email) {
@@ -35,10 +40,16 @@ const VolunteerSignup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    // You can now send formData (with email/password) to your backend
     console.log('Submitted Volunteer Info:', formData);
-    // You can send formData to an API or store it in localStorage/context
     alert('Registration Successful!');
-    navigate('/thankyou'); // or any next step
+    navigate('/thankyou');
   };
 
   return (
@@ -54,6 +65,12 @@ const VolunteerSignup = () => {
         <input type="text" name="interests" placeholder="Interests" onChange={handleChange} />
         <input type="text" name="availability" placeholder="Availability (e.g. Weekends)" onChange={handleChange} />
         <input type="file" name="photo" accept="image/*" onChange={handleChange} />
+
+        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+        <input type="password" name="confirmPassword" placeholder="Confirm Password (optional but recommended)" onChange={handleChange} />
+
+        {error && <p style={{ color: 'red', marginTop: '-10px' }}>{error}</p>}
 
         <button type="submit">Submit</button>
       </form>

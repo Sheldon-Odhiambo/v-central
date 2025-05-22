@@ -1,0 +1,59 @@
+.attachee-signup-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.attachee-signup-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #3498db; /* Blue heading */
+}
+
+.attachee-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.attachee-signup-form input[type="text"],
+.attachee-signup-form input[type="email"],
+.attachee-signup-form input[type="password"],
+.attachee-signup-form input[type="tel"],
+.attachee-signup-form input[type="file"],
+.attachee-signup-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.attachee-signup-form textarea {
+  resize: vertical;
+}
+
+.attachee-signup-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.attachee-signup-form button:hover {
+  background-color: #2980b9;
+}
+
+.attachee-signup-form input:focus,
+.attachee-signup-form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}

@@ -5,11 +5,13 @@ const OrganizationSignup = () => {
   const [formData, setFormData] = useState({
     organizationName: '',
     representativeName: '',
-    email: '',  // This could be pre-filled if needed
+    email: '',
     phone: '',
     location: '',
     areasSeekingVolunteers: '',
-    organizationBio: ''
+    organizationBio: '',
+    password: '',
+    confirmPassword: ''
   });
 
   const handleChange = (e) => {
@@ -19,9 +21,15 @@ const OrganizationSignup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     console.log('Submitted Organization Info:', formData);
-    // You can send formData to an API or store it in localStorage/context
     alert('Organization Registration Successful!');
+    // Here you'd typically send this data to your backend or auth service
   };
 
   return (
@@ -45,9 +53,25 @@ const OrganizationSignup = () => {
         <input 
           type="email" 
           name="email" 
-          placeholder="Email (pre-filled)" 
+          placeholder="Email" 
           onChange={handleChange} 
-          value={formData.email}  // If email is pre-filled, set it here
+          value={formData.email}
+          required 
+        />
+        <input 
+          type="password" 
+          name="password" 
+          placeholder="Password" 
+          onChange={handleChange} 
+          value={formData.password}
+          required 
+        />
+        <input 
+          type="password" 
+          name="confirmPassword" 
+          placeholder="Confirm Password" 
+          onChange={handleChange} 
+          value={formData.confirmPassword}
           required 
         />
         <input 
