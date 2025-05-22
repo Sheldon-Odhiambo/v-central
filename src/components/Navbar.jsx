@@ -22,7 +22,8 @@ const Navbar = () => {
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
         <a href="/opportunities">Find Opportunities</a>
         <a href="/about">About</a>
-        <a href="/signin">Log In</a>
+
+        <a href="/signin" className="signin-link">Log In</a>
 
         <div
           className="signup-dropdown"
@@ -32,8 +33,11 @@ const Navbar = () => {
           <button className="donate-btn">Sign Up ▾</button>
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <a href="/signup/volunteer">As Volunteer</a>
-              <a href="/signup/organization">As Organization</a>
+              <a href="/signup/volunteer">Volunteer</a>
+              <a href="/signup/organization">Organization</a>
+              <a href="/signup/attachee">Attachees</a>
+              <a href="/signup/">Interns</a>
+
             </div>
           )}
         </div>
