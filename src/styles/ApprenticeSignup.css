@@ -1,0 +1,59 @@
+.apprentice-signup-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.apprentice-signup-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #3498db;
+}
+
+.apprentice-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.apprentice-signup-form input[type="text"],
+.apprentice-signup-form input[type="email"],
+.apprentice-signup-form input[type="password"],
+.apprentice-signup-form input[type="tel"],
+.apprentice-signup-form input[type="file"],
+.apprentice-signup-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.apprentice-signup-form textarea {
+  resize: vertical;
+}
+
+.apprentice-signup-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.apprentice-signup-form button:hover {
+  background-color: #2980b9;
+}
+
+.apprentice-signup-form input:focus,
+.apprentice-signup-form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
