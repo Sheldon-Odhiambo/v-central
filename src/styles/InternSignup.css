@@ -1,0 +1,59 @@
+.intern-signup-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.intern-signup-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50; /* Darker heading color */
+}
+
+.intern-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.intern-signup-form input[type="text"],
+.intern-signup-form input[type="email"],
+.intern-signup-form input[type="password"],
+.intern-signup-form input[type="tel"],
+.intern-signup-form input[type="file"],
+.intern-signup-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.intern-signup-form textarea {
+  resize: vertical;
+}
+
+.intern-signup-form button {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #2ecc71; /* Green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.intern-signup-form button:hover {
+  background-color: #27ae60;
+}
+
+.intern-signup-form input:focus,
+.intern-signup-form textarea:focus {
+  border-color: #2ecc71;
+  outline: none;
+}
