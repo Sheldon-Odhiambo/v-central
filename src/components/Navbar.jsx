@@ -36,7 +36,10 @@ const Navbar = () => {
               <a href="/signup/volunteer">Volunteer</a>
               <a href="/signup/organization">Organization</a>
               <a href="/signup/attachee">Attachees</a>
-              <a href="/signup/">Interns</a>
+              <a href="/signup/intern">Interns</a>
+              <a href="/signup/apprentice">Apprentices</a>
+
+
 
             </div>
           )}

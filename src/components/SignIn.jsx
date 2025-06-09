@@ -37,9 +37,13 @@ const SignInPage = () => {
             required
           >
             <option value="" disabled>Select user type</option>
-            <option value="admin">Admin</option>
-            <option value="volunteer">Volunteer</option>
+            <option value="admin">Volunteer</option>
             <option value="organization">Organization</option>
+            <option value="attachee">Attachee</option>
+            <option value="interns">Interns</option>
+            <option value="apprentice">Apprentice</option>
+
+
           </select>
 
           <input

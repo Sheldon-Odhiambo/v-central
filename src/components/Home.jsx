@@ -21,10 +21,10 @@ const Home = () => {
 
         <div className="diagram">
           <div className="diagram-row top-row">
-            <Link to="/signup/interns" className="node">Interns</Link>
+            <Link to="/signup/intern" className="node">Interns</Link>
           </div>
           <div className="diagram-row middle-row">
-            <Link to="/signup/player" className="node">Apprentices</Link>
+            <Link to="/signup/apprentice" className="node">Apprentices</Link>
             <Link to="/signup/organization" className="node center-node">Organization</Link>
             <Link to="/signup/volunteer" className="node">Volunteer</Link>
           </div>
