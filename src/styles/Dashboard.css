@@ -1,3 +1,4 @@
+/* Container shown when user is not found */
 .dashboard-container {
   max-width: 600px;
   margin: 2rem auto;
@@ -5,20 +6,82 @@
   border-radius: 12px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-container h2 {
   text-align: center;
+}
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-top: 20px;
+}
+
+.dashboard-sidebar {
+  width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.sidebar-profile h3 {
+  margin: 0;
+  font-size: 1.2rem;
   color: #333;
-  margin-bottom: 1rem;
 }
 
-.dashboard-details p {
-  margin: 0.6rem 0;
-  font-size: 1rem;
+.role {
+  font-size: 0.9rem;
+  color: #777;
 }
 
-.dashboard-details a {
-  color: #007bff;
-  text-decoration: none;
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar-menu li:hover {
+  background: #e0e0e0;
+}
+
+.logout-btn {
+  background: #ff4d4f;
+  color: white;
+}
+
+.logout-btn:hover {
+  background: #d9363e;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+}
+
+.dashboard-content h2 {
+  color: #333;
+  margin-bottom: 10px;
 }
