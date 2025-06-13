@@ -5,13 +5,15 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import VolunteerSignup from "./components/VolunteerSignup";
 import OrganizationSignup from "./components/OrganizationSignup";
-import AttacheeSignup from "./components/ AttacheeSignup";
+import AttacheeSignup from "./components/AttacheeSignup";
 import ApprenticeSignup from "./components/ApprenticeSignup";
 import InternSignup from "./components/InternSignup";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import About from "./components/About";
 import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+// import Sidebar from "./components/Sidebar";
 
 function App() {
   const [user, setUser] = useState(null); // Store current user
@@ -42,6 +44,8 @@ function App() {
         <Route path="/signup/intern" element={<InternSignup onRegister={fakeLogin} />} />
         <Route path="/signin" element={<SignIn onLogin={fakeLogin} />} />
         <Route path="/dashboard" element={<Dashboard user={user} onLogout={logout} />} />
+        <Route path="/header" element={<Header/>} />
+
       </Routes>
 
       <Footer />

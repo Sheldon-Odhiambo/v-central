@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/SignIn.css';
 
-const SignInPage = () => {
+const SignInPage = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -10,11 +10,18 @@ const SignInPage = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ email, password, rememberMe, userType }); // Log userType too
-    // Add login logic here (e.g., validate userType with backend)
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Fake login simulation (Replace this with real backend auth later)
+  if (email && password && userType) {
+    const userData = { email, userType }; // You can add more fields as needed
+    onLogin(userData); // Call the onLogin function to update App state
+  } else {
+    alert("Invalid credentials");
+  }
+};
+
 
   const handleSignUpRedirect = () => {
     navigate('/signup');
