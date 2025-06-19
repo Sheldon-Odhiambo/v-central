@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import "../styles/Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ openModal }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +22,6 @@ const Navbar = () => {
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
         <a href="/opportunities">Find Opportunities</a>
         <a href="/about">About</a>
-
         <a href="/signin" className="signin-link">Log In</a>
 
         <div
@@ -33,14 +32,11 @@ const Navbar = () => {
           <button className="donate-btn">Sign Up ▾</button>
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <a href="/signup/volunteer">Volunteer</a>
-              <a href="/signup/organization">Organization</a>
-              <a href="/signup/attachee">Attachees</a>
-              <a href="/signup/intern">Interns</a>
-              <a href="/signup/apprentice">Apprentices</a>
-
-
-
+              <button onClick={() => openModal("volunteer")}>Volunteer</button>
+              <button onClick={() => openModal("organization")}>Organization</button>
+              <button onClick={() => openModal("attachee")}>Attachees</button>
+              <button onClick={() => openModal("intern")}>Interns</button>
+              <button onClick={() => openModal("apprentice")}>Apprentices</button>
             </div>
           )}
         </div>

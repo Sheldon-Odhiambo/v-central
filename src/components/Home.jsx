@@ -1,8 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import OrganizationSignup from './OrganizationSignup'; // Add other forms later
+import SignUpModal from './SignUpModal'; // A new modal component you'll create
 import '../styles/Home.css';
 
 const Home = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [userType, setUserType] = useState('');
+
+  const openModal = (type) => {
+    setUserType(type);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setUserType('');
+  };
+
   return (
     <div className="home-wrapper">
       <section className="impact-hero">
@@ -11,7 +25,7 @@ const Home = () => {
           <p className="hero-subtitle">
             V-Central bridges the gap between passionate individuals and organizations.
           </p>
-          <Link to="/about" className="read-more-btn">Read More</Link>
+          <button className="read-more-btn">Read More</button>
         </div>
       </section>
 
@@ -21,18 +35,22 @@ const Home = () => {
 
         <div className="diagram">
           <div className="diagram-row top-row">
-            <Link to="/signup/intern" className="node">Interns</Link>
+            <button onClick={() => openModal("intern")} className="node">Interns</button>
           </div>
           <div className="diagram-row middle-row">
-            <Link to="/signup/apprentice" className="node">Apprentices</Link>
-            <Link to="/signup/organization" className="node center-node">Organization</Link>
-            <Link to="/signup/volunteer" className="node">Volunteer</Link>
+            <button onClick={() => openModal("apprentice")} className="node">Apprentices</button>
+            <button onClick={() => openModal("organization")} className="node center-node">Organization</button>
+            <button onClick={() => openModal("volunteer")} className="node">Volunteer</button>
           </div>
           <div className="diagram-row bottom-row">
-            <Link to="/signup/attachee" className="node">Attachees</Link>
+            <button onClick={() => openModal("attachee")} className="node">Attachees</button>
           </div>
         </div>
       </section>
+
+      {modalOpen && (
+        <SignUpModal userType={userType} onClose={closeModal} />
+      )}
     </div>
   );
 };
