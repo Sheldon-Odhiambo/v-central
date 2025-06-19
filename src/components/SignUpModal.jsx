@@ -10,6 +10,7 @@ import "../styles/Modal.css";
 const SignUpModal = ({ userType, onClose, onRegister }) => {
   const renderForm = () => {
     switch (userType) {
+    
       case "volunteer":
         return <VolunteerSignup onRegister={onRegister} />;
       case "organization":
